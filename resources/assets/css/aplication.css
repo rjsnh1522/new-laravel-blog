@@ -248,7 +248,7 @@ background: #ffffff;
 
 /*contact*/
 label{
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 input[type="text"],input[type="email"],
 input[type='password'],textarea{
@@ -258,7 +258,7 @@ input[type='password'],textarea{
     border:2px solid #E9E9E9;
     padding: 1em;
     margin: .5em 0 2em 0;
-    font-size: 1em;
+    font-size: 1.3em;
 }
 textarea{
     min-height: 20em;

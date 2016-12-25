@@ -20,15 +20,10 @@
     <div class="col-2 homepage_content">
         <h2>Stuff I've Written</h2>
         <hr>
-
-        <h3><a href="#">The DO List</a></h3>
-        <p class="date">Friday April 10</p>
-
-        <h3><a href="#">The DO List</a></h3>
-        <p class="date">Friday April 10</p>
-
-        <h3><a href="#">Strive for uncomfortable</a></h3>
-        <p class="date">Friday April 10</p>
+        @foreach($data['post'] as $post)
+        <h3><a href="{{route('get.show.article',$post->slug)}}">{{$post->title}}</a></h3>
+        <p class="date">{{date('F j, Y'),strtotime($post->created_at)}}</p>
+            @endforeach
 
     </div>
 

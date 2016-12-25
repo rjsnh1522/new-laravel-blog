@@ -20,6 +20,14 @@ Route::get('/',['as'=>'get.index','uses'=>'PageGetterController@getIndex']);
 Route::get('articles',['as'=>'get.articles','uses'=>'PageGetterController@getArticles']);
 
 
+Route::get('add-post',['as'=>'get.add.post','uses'=>'PostController@getAddPost']);
+
+Route::post('save-post',['as'=>'post.add.post','uses'=>'PostController@postAddPost']);
+
+Route::get('about',['as'=>'get.about','uses'=>'AboutController@getAboutController']);
+
+Route::get('show-article/{slug}',['as'=>'get.show.article','uses'=>'PostController@getShowPost']);
+
 
 
 

@@ -8,38 +8,22 @@
 
 @section('content')
     <div id="post_show_content" class="skinny_wrapper">
+        @if(Session::has('error'))
+            <p>{{Session::get('error')}}</p>
+        @endif
+        @if(Session::has('success'))
+            <p>{{Session::get('success')}}</p>
+        @endif
         <header>
-            <p class="date">Friday April 10th</p>
-            <h1>The Do List</h1>
+            {{--<p class="date">Friday April 10th</p>--}}
+            <p class="date">{{date('F j, Y'),strtotime($data['post']->created_at)}}</p>
+            <h1>{{$data['post']->title}}</h1>
             <hr>
         </header>
+
         <div id="content">
 
-            <h2>Heading Place Here</h2>
-            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque debitis, enim illo inventore iste itaque
-                nesciunt nostrum pariatur, quas ratione sunt tempore totam. Accusamus distinctio, enim eos maxime quisquam
-                sequi.
-            </p>
-            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque debitis, enim illo inventore iste itaque
-                nesciunt nostrum pariatur, quas ratione sunt tempore totam. Accusamus distinctio, enim eos maxime quisquam
-                sequi.
-            </p>
-            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque debitis, enim illo inventore iste itaque
-                nesciunt nostrum pariatur, quas ratione sunt tempore totam. Accusamus distinctio, enim eos maxime quisquam
-                sequi.
-            </p>
-            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque debitis, enim illo inventore iste itaque
-                nesciunt nostrum pariatur, quas ratione sunt tempore totam. Accusamus distinctio, enim eos maxime quisquam
-                sequi.
-            </p>
-            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque debitis, enim illo inventore iste itaque
-                nesciunt nostrum pariatur, quas ratione sunt tempore totam. Accusamus distinctio, enim eos maxime quisquam
-                sequi.
-            </p>
-            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque debitis, enim illo inventore iste itaque
-                nesciunt nostrum pariatur, quas ratione sunt tempore totam. Accusamus distinctio, enim eos maxime quisquam
-                sequi.
-            </p>
+            {{$data['post']->content}}
             <hr>
             <div id="share_box">
                 <p>Share The Do List</p>
